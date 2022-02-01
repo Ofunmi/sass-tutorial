@@ -1,0 +1,31 @@
+// parsing
+@import './reset';
+
+// variables
+$primary-color: #272727;
+$secondary-color: #ff652f;
+$text-color: #ffff;
+// maps
+$font-weight: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+);
+body {
+  background: $primary-color;
+  color: $text-color;
+  font-weight: map-get($font-weight, bold);
+}
+
+// nesting
+.main {
+  width: 80%;
+  margin: 0 auto;
+
+  #{&}_p {
+    font-weight: map-get($font-weight, bold);
+  }
+  &:hover {
+    color: pink;
+  }
+}
